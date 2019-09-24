@@ -1,0 +1,1084 @@
+@media screen and (min-width:768px) {
+
+/* ↓↓↓↓↓ 基本設定 開始 ↓↓↓↓↓ */
+html {
+  font-family: 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', YuGothic, 'メイリオ', Meiryo, sans-serif;
+  font-size: 62.5%;
+}
+body {
+  overflow: hidden;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+$dark-grey: #464b50;
+$light-grey: #e4e8ed;
+$pink: #e1007e;
+$orange: #cc9352;
+@mixin font-size($a, $b) {
+  @media screen and (max-width:1279px) {
+    font-size: $a; /* フォールバック */
+    font-size: calc(#{$b} + ((1vw - 0.768rem) * .3906));
+  }
+  @media screen and (min-width:1280px) {
+    font-size: $a;
+  }
+}
+@mixin bebas-neue($a, $b) {
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  @media screen and (max-width:1279px) {
+    font-size: $a; /* フォールバック */
+    font-size: calc(#{$b} + ((1vw - 0.768rem) * 1.9531));
+  }
+  @media screen and (min-width:1280px) {
+    font-size: $a;
+  }
+}
+@mixin box-shadow {
+  box-shadow: 0 3px 15px rgba(51,51,51,.5);
+}
+@mixin container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+@mixin header-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 11.72vw;
+  max-width: 150px;
+  height: 9.38vw;
+  max-height: 120px;
+  padding-top: 13.33%;
+  text-decoration: none;
+}
+@mixin main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23.44vw;
+  max-width: 300px;
+  height: 4.69vw;
+  max-height: 60px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s ease-out;
+  &:hover {
+    background-color: darken($pink, 10%);
+  }
+}
+@mixin diagonal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 120%;
+  height: 80%;
+  background-color: #fff;
+  transform-origin: left top;
+  transform: rotate(-3deg);
+}
+@mixin en-heading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  @include bebas-neue(12.8rem, 11.8rem);
+  letter-spacing: .02em;
+}
+@mixin list-style {
+  position: relative;
+  z-index: 4;
+  padding: 3.13% 0 0 1.25em;
+  @include font-size(1.6rem, 1.4rem);
+  line-height: 2.5;
+  letter-spacing: .08em;
+  list-style-type: none;
+  li::before {
+    content: 'ー\0020';
+  }
+}
+@mixin section-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  width: 31.25vw;
+  max-width: 400px;
+  height: 31.25vw;
+  max-height: 400px;
+}
+@mixin profile {
+  width: 93.74%;
+  padding: 0 3.13%;
+  &__top {
+    display: flex;
+    margin-bottom: 3.85%;
+    &__right {
+      order: 2;
+      width: 110%;
+      transform: translateX(-10%);
+      h3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 110%;
+        height: 6.25vw;
+        max-height: 80px;
+        padding-left: .83em;
+        background-color: $dark-grey;
+        @include font-size(2.2rem, 2rem);
+        letter-spacing: .1em;
+        color: #fff;
+        span {
+          @include font-size(1.2rem, 1rem);
+          font-weight: normal;
+        }
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 110%;
+        height: 6.25vw;
+        max-height: 80px;
+        padding-right: 1.25em;
+        background: url("../images/stripe.png") 0 0 repeat /1%;
+        @include font-size(1.8rem, 1.6rem);
+        letter-spacing: .1em;
+      }
+    }
+    &__left {
+      order: 1;
+      img {
+        height: 12.5vw;
+        max-height: 160px;
+        border: 2px solid #fff;
+      }
+    }
+  }
+  &__bottom {
+    text-align: justify;
+    @include font-size(1.6rem, 1.4rem);
+    line-height: 2;
+    letter-spacing: .08em;
+  }
+}
+@mixin form($a, $b) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $a;
+  margin-bottom: 2.88%;
+  #{$b} {
+    width: 75%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadein {
+  opacity: 0;
+  transition: .3s linear;
+}
+.scrollin {
+  opacity: 1;
+}
+/* ↑↑↑↑↑ 基本設定 終了 ↑↑↑↑↑ */
+
+/* ↓↓↓↓↓ ヘッダー 開始 ↓↓↓↓↓ */
+header {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background-color: #fff;
+  @include box-shadow;
+  &.open {
+    z-index: 15;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    @include container;
+    height: 7.81vw;
+    max-height: 100px;
+    &__left {
+      display: flex;
+      align-items: center;
+      h1 {
+        margin: 0 3.81%;
+        img {
+          vertical-align: middle;
+          height: 4.69vw;
+          max-height: 60px;
+        }
+      }
+      p {
+        @include font-size(1.4rem, 1.2rem);
+        letter-spacing: .1em;
+        color: $dark-grey;
+        white-space: nowrap;
+      }
+    }
+    &__right {
+      display: flex;
+      align-items: center;
+      .menu-button {
+        background-color: $dark-grey;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        @include box-shadow;
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+          padding-top: 6.66%;
+        }
+        a {
+          @include header-button;
+          p.icon {
+            width: 3.91vw;
+            max-width: 50px;
+            height: 3.91vw;
+            max-height: 50px;
+            background: url("../images/icon_hamburger.png") 0 0 no-repeat /contain;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: .3s ease-in;
+          }
+          p.text {
+            @include bebas-neue(2.8rem, 1.8rem);
+            letter-spacing: .14em;
+            color: #fff;
+          }
+        }
+        &.active {
+          p.icon {
+            background: url("../images/icon_cross.png") 0 0 no-repeat /contain;
+          }
+          p.text {
+            font-size: 0;
+            &::before {
+              content: 'CLOSE';
+              @include bebas-neue(2.8rem, 1.8rem);
+              letter-spacing: .125em;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .empty-button {
+        width: .78vw;
+        max-width: 10px;
+      }
+      .contact-button {
+        background-color: $pink;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        @include box-shadow;
+        transition: .3s;
+        &:hover {
+          padding-top: 6.66%;
+        }
+        a {
+          @include header-button;
+          p.icon {
+            width: 3.91vw;
+            max-width: 50px;
+            height: 3.91vw;
+            max-height: 50px;
+            background: url("../images/icon_mail.png") 0 0 no-repeat /contain;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+          }
+          p.text {
+            @include bebas-neue(2.8rem, 1.8rem);
+            letter-spacing: .1em;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+/* ↑↑↑↑↑ ヘッダー 終了 ↑↑↑↑↑ */
+
+/* ↓↓↓↓↓ ドロワーメニュー 開始 ↓↓↓↓↓ */
+.drawer-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: scroll;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.8);
+  &.open {
+    visibility: visible;
+    ul {
+      animation: fadein .7s linear;
+    }
+  }
+  &::before {
+    content: '';
+    display: block;
+    height: 15.63vw;
+    max-height: 200px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    height: 7.81vw;
+    max-height: 100px;
+  }
+  ul {
+    text-align: center;
+    list-style-type: none;
+    li {
+      margin: 0 15%;
+      border-bottom: 1px solid #fff;
+      &:last-of-type {
+        border-bottom: 0;
+      }
+      a {
+        display: block;
+        width: 100%;
+        padding: 7.5% 0;
+        @include font-size(2.2rem, 2rem);
+        letter-spacing: .1em;
+        color: #fff;
+        text-decoration: none;
+        transition: .3s background-color ease-out;
+        &:hover {
+          background-color: lighten(rgba(0,0,0,.8), 50%);
+        }
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}
+/* ↑↑↑↑↑ ドロワーメニュー 終了 ↑↑↑↑↑ */
+
+/* ↓↓↓↓↓ メイン 開始 ↓↓↓↓↓ */
+main {
+  &::before {
+    content: '';
+    display: block;
+    height: 7.81vw;
+    max-height: 100px;
+  }
+  /* ↓↓↓↓↓ セクション(hero) 開始 ↓↓↓↓↓ */
+  section.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vw;
+    max-height: 640px;
+    padding-bottom: 5.47%;
+    background: url("../images/hero.jpg") 0 0 no-repeat /cover;
+    h1 {
+      text-align: center;
+      @include font-size(4rem, 3.8rem);
+      line-height: 1.2;
+      letter-spacing: .032em;
+      color: #fff;
+      animation: fadein .7s linear;
+      span {
+        padding-bottom: .5em;
+        border-bottom: 1px solid #fff;
+        @include font-size(1.6rem, 1.4rem);
+        line-height: 3;
+        letter-spacing: .4em;
+        font-weight: normal;
+      }
+    }
+    > p {
+      @include font-size(1.6rem, 1.4rem);
+      line-height: 2;
+      letter-spacing: .08em;
+      color: #fff;
+      animation: fadein .7s linear;
+    }
+    .contact-button {
+      animation: fadein .7s linear;
+      a {
+        @include main-button;
+        background-color: $pink;
+        @include box-shadow;
+        p.icon {
+          width: 1.95vw;
+          max-width: 25px;
+          height: 1.95vw;
+          max-height: 25px;
+          margin-right: 3.33%;
+          background: url("../images/icon_mail.png") 0 0 no-repeat /contain;
+        }
+        p.text {
+          @include font-size(2rem, 1.8rem);
+          letter-spacing: .1em;
+          color: #fff;
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(hero) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(question) 開始 ↓↓↓↓↓ */
+  section.question {
+    position: relative;
+    padding-bottom: 3.13%;
+    &::before {
+      @include diagonal;
+    }
+    .section-inner {
+      .container {
+        position: relative;
+        @include container;
+        .heading {
+          position: relative;
+          z-index: 4;
+          padding-top: 3.13%;
+          h2.jp-heading {
+            display: inline;
+            padding: .5em .7em;
+            background-color: $dark-grey;
+            @include font-size(2.8rem, 2.6rem);
+            letter-spacing: .1em;
+            color: #fff;
+            span {
+              color: $orange;
+            }
+            &:first-of-type::after {
+              content: '\A';
+              white-space: pre;
+            }
+          }
+        }
+        h2.en-heading {
+          @include en-heading;
+          color: $light-grey;
+        }
+        ul {
+          @include list-style;
+        }
+        .question-image {
+          @include section-image;
+          background: url("../images/image01.png") 0 0 no-repeat /contain;
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(question) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(resolution) 開始 ↓↓↓↓↓ */
+  section.resolution {
+    padding-bottom: 9.38%;
+    background: url("../images/window.jpg") 0 0 repeat;
+    .arrow {
+      position: relative;
+      margin-bottom: 3.13vw;
+      border-top: 10vw solid #fff;
+      border-right: 50vw solid transparent;
+      border-left: 50vw solid transparent;
+      h2 {
+        position: absolute;
+        bottom: 5vw;
+        left: 0;
+        transform: translateX(-50%);
+        @include font-size(2.8rem, 2.6rem);
+        letter-spacing: .1em;
+        color: $dark-grey;
+        white-space: nowrap;
+        span {
+          color: $orange;
+        }
+      }
+    }
+    .container {
+      display: flex;
+      @include container;
+      .nagai {
+        @include profile;
+      }
+      .loan {
+        @include profile;
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(resolution) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(recommended) 開始 ↓↓↓↓↓ */
+  section.recommended {
+    position: relative;
+    padding-bottom: 3.13%;
+    &::before {
+      @include diagonal;
+    }
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      content: '';
+      width: 120%;
+      height: 80%;
+      background-color: #fff;
+      transform-origin: left bottom;
+      transform: rotate(3deg);
+    }
+    .section-inner {
+      .container {
+        position: relative;
+        @include container;
+        h2.jp-heading {
+          position: relative;
+          z-index: 4;
+          display: inline-block;
+          padding: .5em .7em;
+          margin-top: 4.69%;
+          background-color: $dark-grey;
+          @include font-size(2.8rem, 2.6rem);
+          letter-spacing: .1em;
+          color: #fff;
+          span {
+            color: $orange;
+          }
+        }
+        h2.en-heading {
+          @include en-heading;
+          color: $light-grey;
+        }
+        ul {
+          @include list-style;
+        }
+        .recommended-image {
+          @include section-image;
+          background: url("../images/image02.png") 0 0 no-repeat /contain;
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(recommended) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(flow) 開始 ↓↓↓↓↓ */
+  section.flow {
+    position: relative;
+    padding-top: 3.13%;
+    background: url("../images/image03.jpg") 0 0 no-repeat /cover;
+    .container {
+      position: relative;
+      @include container;
+      .heading {
+        text-align: right;
+        h2.jp-heading {
+          position: relative;
+          z-index: 4;
+          display: inline-block;
+          padding: .5em .7em;
+          margin-top: 4.69%;
+          background-color: $dark-grey;
+          @include font-size(2.8rem, 2.6rem);
+          letter-spacing: .1em;
+          color: #fff;
+          span {
+            color: $orange;
+          }
+        }
+      }
+      h2.en-heading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        @include bebas-neue(12.8rem, 11.8rem);
+        letter-spacing: .02em;
+        color: #fff;
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 3.13% 0 9.38% 0;
+        &__left {
+          width: 50%;
+          .procedure {
+            padding: 3.85%;
+            background-color: rgba(255,255,255,.4);
+            @include box-shadow;
+            h4 {
+              margin-bottom: 1.92%;
+              @include font-size(1.8rem, 1.6rem);
+              letter-spacing: .1em;
+              span {
+                @include bebas-neue(2.7rem, 1.7rem);
+                &::after {
+                  content: '\0020';
+                }
+              }
+            }
+            p {
+              margin-bottom: 7.69%;
+              @include font-size(1.6rem, 1.4rem);
+              letter-spacing: .1em;
+            }
+          }
+        }
+        &__right {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          width: 48.08%;
+          .place {
+            width: 100%;
+            padding: 3.85%;
+            background-color: rgba(255,255,255,.4);
+            @include box-shadow;
+            h4 {
+              margin-bottom: 1.92%;
+              @include font-size(1.8rem, 1.6rem);
+              letter-spacing: .1em;
+            }
+            ul {
+              margin-bottom: 7.69%;
+              @include font-size(1.6rem, 1.4rem);
+              letter-spacing: .08em;
+              list-style-type: none;
+            }
+          }
+          .price {
+            width: 100%;
+            padding: 3.85%;
+            background-color: rgba(255,255,255,.4);
+            @include box-shadow;
+            h4 {
+              margin-bottom: 1.92%;
+              @include font-size(1.8rem, 1.6rem);
+              letter-spacing: .1em;
+            }
+            ul {
+              margin-bottom: 1.92%;
+              @include font-size(1.6rem, 1.4rem);
+              letter-spacing: .08em;
+              list-style-type: none;
+            }
+            p {
+              position: relative;
+              padding-left: 1em;
+              margin-bottom: 7.69%;
+              @include font-size(1.4rem, 1.2rem);
+              letter-spacing: .1em;
+              &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '※';
+              }
+            }
+          }
+          .contact-button {
+            a {
+              @include main-button;
+              background-color: $pink;
+              @include box-shadow;
+              p.icon {
+                width: 1.95vw;
+                max-width: 25px;
+                height: 1.95vw;
+                max-height: 25px;
+                margin-right: 3.33%;
+                background: url("../images/icon_mail.png") 0 0 no-repeat /contain;
+              }
+              p.text {
+                @include font-size(2rem, 1.8rem);
+                letter-spacing: .1em;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(flow) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(message) 開始 ↓↓↓↓↓ */
+  section.message {
+    position: relative;
+    padding-bottom: 3.13%;
+    background: url("../images/window.jpg") 0 0 repeat;
+    .diagonal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: '';
+      width: 120%;
+      height: 60%;
+      transform-origin: left top;
+      transform: rotate(-3deg);
+      .diagonal-inner {
+        width: 100%;
+        height: 10vw; /* フォールバック */
+        height: calc(10vw - ((1vw - 7.68px) * 5));
+        background: url("../images/window.jpg") 0 0 repeat;
+        transform-origin: right top;
+        transform: rotate(3deg) translateX(1.5px);
+      }
+    }
+    .section-inner {
+      .container {
+        position: relative;
+        @include container;
+        h2.jp-heading {
+          position: relative;
+          z-index: 4;
+          display: inline-block;
+          padding: .5em .7em;
+          margin-top: 4.69%;
+          background-color: $dark-grey;
+          @include font-size(2.8rem, 2.6rem);
+          letter-spacing: .1em;
+          color: #fff;
+          span {
+            color: $orange;
+          }
+        }
+        h2.en-heading {
+          @include en-heading;
+          color: #fff;
+        }
+        > p {
+          position: relative;
+          z-index: 4;
+          text-align: justify;
+          padding: 3.13% 1.25em 0 1.25em;
+          @include font-size(1.6rem, 1.4rem);
+          line-height: 2;
+          letter-spacing: .08em;
+        }
+        .end-of-text {
+          text-align: right;
+          p {
+            position: relative;
+            z-index: 4;
+            padding-right: 1.25em;
+            @include font-size(1.6rem, 1.4rem);
+            line-height: 2.5;
+            letter-spacing: .08em;
+          }
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(message) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(consultation) 開始 ↓↓↓↓↓ */
+  section.consultation {
+    padding: 4.69% 0 3.13% 0;
+    .container {
+      @include container;
+      h2 {
+        text-align: center;
+        @include font-size(2.8rem, 2.6rem);
+        letter-spacing: .1em;
+        color: $dark-grey;
+        span {
+          color: $orange;
+        }
+      }
+      ul {
+        padding: 3.13% 1.25em 0 1.25em;
+        @include font-size(1.6rem, 1.4rem);
+        line-height: 2.5;
+        letter-spacing: .08em;
+        list-style-type: none;
+        li {
+          position: relative;
+          padding-left: 1.5em;
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: 'ー\0020';
+          }
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(consultation) 終了 ↑↑↑↑↑ */
+
+  /* ↓↓↓↓↓ セクション(contact) 開始 ↓↓↓↓↓ */
+  section.contact {
+    padding-bottom: 4.69%;
+    background: url("../images/image04.jpg") 0 0 no-repeat /cover;
+    .arrow {
+      position: relative;
+      margin-bottom: 3.13vw;
+      border-top: 10vw solid #fff;
+      border-right: 50vw solid transparent;
+      border-left: 50vw solid transparent;
+      h2 {
+        position: absolute;
+        bottom: 5vw;
+        left: 0;
+        transform: translateX(-50%);
+        @include font-size(2.4rem, 2.2rem);
+        letter-spacing: .1em;
+        color: $pink;
+        white-space: nowrap;
+      }
+    }
+    .box {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: #fff;
+      @include box-shadow;
+      .mail {
+        padding: 3.13% 0;
+        margin: 0 1.56%;
+        border-bottom: 1px solid $dark-grey;
+        h3 {
+          text-align: center;
+          margin-bottom: 3.13%;
+          @include font-size(2rem, 1.8rem);
+          letter-spacing: .1em;
+          color: $pink;
+        }
+        .mail-group {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 1.56%;
+          .jp-mail {
+            p {
+              text-align: center;
+              @include font-size(1.6rem, 1.4rem);
+              line-height: 1.75;
+              letter-spacing: .08em;
+              &:last-of-type {
+                text-decoration: underline;
+              }
+            }
+          }
+          .vn-mail {
+            p {
+              text-align: center;
+              @include font-size(1.6rem, 1.4rem);
+              line-height: 1.75;
+              letter-spacing: .08em;
+              &:last-of-type {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .form {
+        padding: 3.13% 0;
+        margin: 0 1.56%;
+        h3 {
+          text-align: center;
+          margin-bottom: 3.13%;
+          @include font-size(2rem, 1.8rem);
+          letter-spacing: .1em;
+          color: $pink;
+        }
+        form {
+          max-width: 520px;
+          margin: 0 auto;
+          p {
+            vertical-align: middle;
+            @include font-size(1.6rem, 1.4rem);
+            letter-spacing: .08em;
+          }
+          .form-company {
+            @include form(center, input);
+          }
+          .form-position {
+            @include form(center, input);
+          }
+          .form-name {
+            @include form(center, input);
+          }
+          .form-content {
+            @include form(stretch, textarea);
+          }
+          .form-datetime {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.88%;
+            .form-group {
+              display: flex;
+              justify-content: space-between;
+              width: 75%;
+              input {
+                border: 1px solid #ccc;
+                border-radius: 3px;
+              }
+            }
+          }
+          .form-place {
+            position: relative;
+            @include form(center, select);
+            &::before {
+              position: absolute;
+              top: 50%;
+              right: 2%;
+              transform: translateY(-50%);
+              content: '';
+              display: block;
+              width: .5em;
+              height: .5em;
+              border-top: .5em solid #888;
+              border-right: .25em solid transparent;
+              border-left: .25em solid transparent;
+            }
+          }
+          .form-specialist {
+            position: relative;
+            @include form(center, select);
+            &::before {
+              position: absolute;
+              top: 50%;
+              right: 2%;
+              transform: translateY(-50%);
+              content: '';
+              display: block;
+              width: .5em;
+              height: .5em;
+              border-top: .5em solid #888;
+              border-right: .25em solid transparent;
+              border-left: .25em solid transparent;
+            }
+          }
+          .form-mail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4.33%;
+            p {
+              line-height: 1.25;
+              span {
+                @include font-size(1.4rem, 1.2rem);
+                &:before {
+                  content: '※';
+                }
+              }
+            }
+            input {
+              width: 50%;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+            }
+          }
+          .form-button {
+            text-align: center;
+            input {
+              width: 17.58vw;
+              max-width: 225px;
+              height: 3.52vw;
+              max-height: 45px;
+              background-color: $pink;
+              border-radius: 5px;
+              @include font-size(1.8rem, 1.6rem);
+              letter-spacing: .1em;
+              color: #fff;
+              font-weight: bold;
+              transition: .3s ease-out;
+              &:hover {
+                background-color: darken($pink, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* ↑↑↑↑↑ セクション(contact) 終了 ↑↑↑↑↑ */
+
+}
+/* ↑↑↑↑↑ メイン 終了 ↑↑↑↑↑ */
+
+/* ↓↓↓↓↓ フッター 開始 ↓↓↓↓↓ */
+footer {
+  padding: 3.13% 0;
+  background-color: $dark-grey;
+  .container {
+    position: relative;
+    @include container;
+    h2 {
+      position: absolute;
+      bottom: -.2em;
+      left: 0;
+      @include bebas-neue(12.8rem, 11.8rem);
+      letter-spacing: .02em;
+      color: #fff;
+      opacity: .2;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1.92%;
+      &__left {
+        padding-right: 1.92%;
+        h4 {
+          @include font-size(1.4rem, 1.2rem);
+          line-height: 2.25;
+          letter-spacing: .1em;
+          font-weight: bold;
+          a {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+        p {
+          text-align: justify;
+          margin-bottom: 2em;
+          @include font-size(1.4rem, 1.2rem);
+          line-height: 1.25;
+          letter-spacing: .1em;
+          color: #fff;
+        }
+      }
+      &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        img {
+          width: 3.13vw;
+          max-width: 40px;
+          height: 3.13vw;
+          max-height: 40px;
+        }
+        p:last-of-type {
+          @include font-size(1.2rem, 1rem);
+          letter-spacing: .1em;
+          color: #fff;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+/* ↑↑↑↑↑ フッター 終了 ↑↑↑↑↑ */
+
+}
