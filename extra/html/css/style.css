@@ -99,8 +99,12 @@
   .content::before {
     content: '';
     display: block;
+    width: 6.25vw;
     max-width: 80px;
-    padding-right: 6.25vw;
+  }
+  .content .container {
+    position: relative;
+    flex: 1;
   }
   /* ↓↓↓↓↓ ヘッダー 開始 ↓↓↓↓↓ */
   header {
@@ -109,7 +113,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 93.34%;
+    width: 100%;
     height: 6.25vw;
     max-height: 80px;
     padding: 0 3.33%;
@@ -304,8 +308,8 @@
   main .hero__image::before {
     content: '';
     display: block;
+    height: 6.25vw;
     max-height: 80px;
-    padding-bottom: 6.25vw;
   }
   main .hero__image__slide {
     position: relative;
@@ -818,7 +822,6 @@
     display: flex;
     flex-direction: column;
     padding-top: 40px;
-    margin: 0 6.66%;
   }
   main .meal__content .dinner {
     position: relative;
@@ -828,7 +831,8 @@
   }
   main .meal__content .dinner__text {
     position: relative;
-    width: 26.92%;
+    width: 23.33%;
+    margin-right: 6.66%;
   }
   main .meal__content .dinner__text::before {
     position: absolute;
@@ -891,12 +895,13 @@
   main .meal__content .dinner__image {
     position: absolute;
     left: 0;
-    width: 69.23%;
+    width: 66.66%;
   }
   main .meal__content .dinner__image__slide {
     display: flex;
     flex-direction: row-reverse;
     height: 280px;
+    background-color: #333;
   }
   main .meal__content .dinner__image__slide li {
     list-style-type: none;
@@ -908,7 +913,8 @@
   }
   main .meal__content .desert__text {
     position: relative;
-    width: 26.92%;
+    width: 23.33%;
+    margin-left: 6.66%;
   }
   main .meal__content .desert__text::before {
     position: absolute;
@@ -971,11 +977,12 @@
   main .meal__content .desert__image {
     position: absolute;
     right: 0;
-    width: 69.23%;
+    width: 66.66%;
   }
   main .meal__content .desert__image__slide {
     display: flex;
     height: 280px;
+    background-color: #333;
   }
   main .meal__content .desert__image__slide li {
     list-style-type: none;
@@ -988,7 +995,8 @@
   }
   main .meal__content .morning__text {
     position: relative;
-    width: 26.92%;
+    width: 23.33%;
+    margin-right: 6.66%;
   }
   main .meal__content .morning__text::after {
     position: absolute;
@@ -1051,12 +1059,13 @@
   main .meal__content .morning__image {
     position: absolute;
     left: 0;
-    width: 69.23%;
+    width: 66.66%;
   }
   main .meal__content .morning__image__slide {
     display: flex;
     flex-direction: row-reverse;
     height: 280px;
+    background-color: #333;
   }
   main .meal__content .morning__image__slide li {
     list-style-type: none;
