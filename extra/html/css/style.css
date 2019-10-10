@@ -906,6 +906,56 @@
   main .meal__content .dinner__image__slide li {
     list-style-type: none;
   }
+  main .meal__content .dinner__image__button {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  main .meal__content .dinner__image__button .button01 {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  main .meal__content .dinner__image__button .button01::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    border-right: 8px solid #000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+  main .meal__content .dinner__image__button .button02 {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    cursor: pointer;
+    transform: translateX(50%);
+  }
+  main .meal__content .dinner__image__button .button02::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    border-left: 8px solid #000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
   main .meal__content .desert {
     position: relative;
     display: flex;
@@ -986,6 +1036,56 @@
   }
   main .meal__content .desert__image__slide li {
     list-style-type: none;
+  }
+  main .meal__content .desert__image__button {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  main .meal__content .desert__image__button .button01 {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    cursor: pointer;
+    transform: translateX(-50%);
+  }
+  main .meal__content .desert__image__button .button01::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    border-right: 8px solid #000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+  main .meal__content .desert__image__button .button02 {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  main .meal__content .desert__image__button .button02::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    border-left: 8px solid #000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
   }
   main .meal__content .morning {
     position: relative;
@@ -1069,6 +1169,191 @@
   }
   main .meal__content .morning__image__slide li {
     list-style-type: none;
+  }
+  main .meal__content .morning__image__button {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  main .meal__content .morning__image__button .button01 {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  main .meal__content .morning__image__button .button01::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    border-right: 8px solid #000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+  main .meal__content .morning__image__button .button02 {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    cursor: pointer;
+    transform: translateX(50%);
+  }
+  main .meal__content .morning__image__button .button02::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    border-left: 8px solid #000;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+  main .about-reservation {
+    margin: 0 16.66%;
+  }
+  main .about-reservation h2 {
+    text-align: center;
+    margin-bottom: 2.5%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .about-reservation h2 {
+    font-size: 2.2rem;
+    /* フォールバック */
+    font-size: calc(2rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .about-reservation h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .about-reservation h4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7.5%;
+  }
+  main .about-reservation h4 span {
+    font-family: 'Yu Mincho', YuMincho, 'ヒラギノ明朝 Pro', 'Hiragino Mincho Pro', sans-serif;
+    letter-spacing: .8em;
+    font-weight: normal;
+    margin-right: -.8em;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .about-reservation h4 span {
+    font-size: 1.8rem;
+    /* フォールバック */
+    font-size: calc(1.6rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .about-reservation h4 span {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .about-reservation h4::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-right: 3.75%;
+    background-color: #fff;
+  }
+  main .about-reservation h4::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-left: 3.75%;
+    background-color: #fff;
+  }
+  main .about-reservation table {
+    border-collapse: collapse;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .about-reservation table {
+    font-size: 1.4rem;
+    /* フォールバック */
+    font-size: calc(1.2rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .about-reservation table {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .about-reservation table tr th {
+    text-align: right;
+    vertical-align: top;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+  main .about-reservation table tr td {
+    padding: 0 0 2.5% 5%;
+  }
+  main .about-reservation table tr td ul li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 1em;
+  }
+  main .about-reservation table tr td ul li::before {
+    position: absolute;
+    left: 0;
+    content: '-\0020';
+  }
+  main .about-reservation table tr td .footnote {
+    position: relative;
+    letter-spacing: .12em;
+    padding-left: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .about-reservation table tr td .footnote {
+    font-size: 1.2rem;
+    /* フォールバック */
+    font-size: calc(1rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .about-reservation table tr td .footnote {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .about-reservation table tr td .footnote::before {
+    position: absolute;
+    left: 0;
+    content: '※';
   }
   /* ↑↑↑↑↑ メイン 終了 ↑↑↑↑↑ */
   /* ↓↓↓↓↓ フッター 開始 ↓↓↓↓↓ */

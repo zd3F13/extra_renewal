@@ -36,6 +36,26 @@ $navy: #071429;
     font-size: $fallback;
   }
 }
+@mixin slide-button($direction) {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background-color: $white;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: block;
+    width: 8px;
+    height: 16px;
+    #{$direction}: 8px solid $black;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+}
 
 html {
   font-family: 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
@@ -656,6 +676,22 @@ main {
               list-style-type: none;
             }
           }
+          &__button {
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            .button01 {
+              @include slide-button(border-right);
+            }
+            .button02 {
+              @include slide-button(border-left);
+              transform: translateX(50%);
+            }
+          }
         }
       }
       .desert {
@@ -701,6 +737,22 @@ main {
             background-color: $dark-grey;
             li {
               list-style-type: none;
+            }
+          }
+          &__button {
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            .button01 {
+              @include slide-button(border-right);
+              transform: translateX(-50%);
+            }
+            .button02 {
+              @include slide-button(border-left);
             }
           }
         }
@@ -752,6 +804,22 @@ main {
               list-style-type: none;
             }
           }
+          &__button {
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            .button01 {
+              @include slide-button(border-right);
+            }
+            .button02 {
+              @include slide-button(border-left);
+              transform: translateX(50%);
+            }
+          }
         }
       }
     }
@@ -759,6 +827,80 @@ main {
   /* ↑↑↑↑↑ セクション(meal) 終了 ↑↑↑↑↑ */
 
   /* ↓↓↓↓↓ セクション(about-reservation) 開始 ↓↓↓↓↓ */
+  .about-reservation {
+    margin: 0 16.66%;
+    h2 {
+      text-align: center;
+      @include font-size(2.2rem, 2rem, .3914);
+      margin-bottom: 2.5%;
+    }
+    h4 {
+      display: flex;
+      align-items: center;
+      margin-bottom: 7.5%;
+      span {
+        @include yu-mincho(1.8rem, 1.6rem, .3914);
+        letter-spacing: .8em;
+        font-weight: normal;
+        margin-right: -.8em;
+        white-space: nowrap;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin-right: 3.75%;
+        background-color: $white;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin-left: 3.75%;
+        background-color: $white;
+      }
+    }
+    table {
+      border-collapse: collapse;
+      @include font-size(1.4rem, 1.2rem, .3914);
+      tr {
+        th {
+          text-align: right;
+          vertical-align: top;
+          font-weight: normal;
+          white-space: nowrap;
+        }
+        td {
+          padding: 0 0 2.5% 5%;
+          ul {
+            li {
+              list-style-type: none;
+              position: relative;
+              padding-left: 1em;
+              &::before {
+                position: absolute;
+                left: 0;
+                content: '-\0020';
+              }
+            }
+          }
+          .footnote {
+            position: relative;
+            @include font-size(1.2rem, 1rem, .3914);
+            letter-spacing: .12em;
+            padding-left: 1em;
+            &::before {
+              position: absolute;
+              left: 0;
+              content: '※';
+            }
+          }
+        }
+      }
+    }
+  }
   /* ↑↑↑↑↑ セクション(about-reservation) 終了 ↑↑↑↑↑ */
 
   /* ↓↓↓↓↓ セクション(attention) 開始 ↓↓↓↓↓ */
