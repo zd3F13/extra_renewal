@@ -1221,7 +1221,7 @@
     border-bottom: 8px solid transparent;
   }
   main .about-reservation {
-    margin: 0 16.66%;
+    margin: 0 16.66% 10% 16.66%;
   }
   main .about-reservation h2 {
     text-align: center;
@@ -1291,6 +1291,7 @@
   }
   main .about-reservation table {
     border-collapse: collapse;
+    margin: 0 auto;
   }
 }
 
@@ -1351,6 +1352,124 @@
 
 @media screen and (min-width: 768px) {
   main .about-reservation table tr td .footnote::before {
+    position: absolute;
+    left: 0;
+    content: '※';
+  }
+  main .attention {
+    margin: 0 16.66% 10% 16.66%;
+  }
+  main .attention h3 {
+    letter-spacing: .16em;
+    color: #777;
+    padding-bottom: 2.5%;
+    margin-bottom: 2.5%;
+    border-bottom: 1px solid #777;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .attention h3 {
+    font-size: 1.8rem;
+    /* フォールバック */
+    font-size: calc(1.6rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .attention h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .attention h4 {
+    font-weight: normal;
+    margin-bottom: 7.5%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .attention h4 {
+    font-size: 1.8rem;
+    /* フォールバック */
+    font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.7828));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .attention h4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .attention h4 .heading {
+    color: #ccc;
+    cursor: pointer;
+  }
+  main .attention h4 .slash {
+    color: #777;
+    padding: 0 1em;
+  }
+  main .attention .switching {
+    position: relative;
+  }
+  main .attention .switching__text {
+    line-height: 2;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .attention .switching__text {
+    font-size: 1.4rem;
+    /* フォールバック */
+    font-size: calc(1.2rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .attention .switching__text {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .attention .switching__text:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+  }
+  main .attention .switching__text:last-of-type {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+  }
+  main .attention .switching__text dl {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .attention .switching__text dl dt {
+    width: 12.5%;
+  }
+  main .attention .switching__text dl dd {
+    width: 87.5%;
+  }
+  main .attention .switching__text ul li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 1em;
+  }
+  main .attention .switching__text ul li::before {
+    position: absolute;
+    left: 0;
+    content: '-\0020';
+  }
+  main .attention .switching__text .footnote {
+    position: relative;
+    padding-left: 1em;
+  }
+  main .attention .switching__text .footnote::before {
     position: absolute;
     left: 0;
     content: '※';

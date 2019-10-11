@@ -5,6 +5,7 @@ $black: #000;
 $white: #fff;
 $dark-grey: #333;
 $midium-grey: #777;
+$light-grey: #ccc;
 $navy: #071429;
 @mixin font-size($fallback, $minimum, $adjust) {
   @media screen and (max-width:1279px) {
@@ -828,7 +829,7 @@ main {
 
   /* ↓↓↓↓↓ セクション(about-reservation) 開始 ↓↓↓↓↓ */
   .about-reservation {
-    margin: 0 16.66%;
+    margin: 0 16.66% 10% 16.66%;
     h2 {
       text-align: center;
       @include font-size(2.2rem, 2rem, .3914);
@@ -865,6 +866,7 @@ main {
     table {
       border-collapse: collapse;
       @include font-size(1.4rem, 1.2rem, .3914);
+      margin: 0 auto;
       tr {
         th {
           text-align: right;
@@ -904,6 +906,81 @@ main {
   /* ↑↑↑↑↑ セクション(about-reservation) 終了 ↑↑↑↑↑ */
 
   /* ↓↓↓↓↓ セクション(attention) 開始 ↓↓↓↓↓ */
+  .attention {
+    margin: 0 16.66% 10% 16.66%;
+    h3 {
+      @include font-size(1.8rem, 1.6rem, .3914);
+      letter-spacing: .16em;
+      color: $midium-grey;
+      padding-bottom: 2.5%;
+      margin-bottom: 2.5%;
+      border-bottom: 1px solid $midium-grey;
+    }
+    h4 {
+      @include font-size(1.8rem, 1.4rem, .7828);
+      font-weight: normal;
+      margin-bottom: 7.5%;
+      .heading {
+        color: $light-grey;
+        cursor: pointer;
+      }
+      .slash {
+        color: $midium-grey;
+        padding: 0 1em;
+      }
+    }
+    .switching {
+      position: relative;
+      &__text {
+        @include font-size(1.4rem, 1.2rem, .3914);
+        line-height: 2;
+        &:first-of-type {
+          // visibility: hidden;
+        }
+        &:nth-of-type(2) {
+          position: absolute;
+          top: 0;
+          visibility: hidden;
+        }
+        &:last-of-type {
+          position: absolute;
+          top: 0;
+          visibility: hidden;
+        }
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+          dt {
+            width: 12.5%;
+          }
+          dd {
+            width: 87.5%;
+          }
+        }
+        ul {
+          li {
+            list-style-type: none;
+            position: relative;
+            padding-left: 1em;
+            &::before {
+              position: absolute;
+              left: 0;
+              content: '-\0020';
+            }
+          }
+        }
+        .footnote {
+          position: relative;
+          padding-left: 1em;
+          &::before {
+            position: absolute;
+            left: 0;
+            content: '※';
+          }
+        }
+      }
+    }
+  }
   /* ↑↑↑↑↑ セクション(attention) 終了 ↑↑↑↑↑ */
 
   /* ↓↓↓↓↓ セクション(contact) 開始 ↓↓↓↓↓ */
