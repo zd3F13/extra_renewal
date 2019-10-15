@@ -866,6 +866,7 @@ main {
     table {
       border-collapse: collapse;
       @include font-size(1.4rem, 1.2rem, .3914);
+      line-height: 2;
       margin: 0 auto;
       tr {
         th {
@@ -891,6 +892,7 @@ main {
           .footnote {
             position: relative;
             @include font-size(1.2rem, 1rem, .3914);
+            line-height: 1.5;
             letter-spacing: .12em;
             padding-left: 1em;
             &::before {
@@ -984,12 +986,147 @@ main {
   /* ↑↑↑↑↑ セクション(attention) 終了 ↑↑↑↑↑ */
 
   /* ↓↓↓↓↓ セクション(contact) 開始 ↓↓↓↓↓ */
+  .contact {
+    margin: 0 16.66% 13.33% 16.66%;
+    h3 {
+      text-align: right;
+      @include font-size(1.8rem, 1.6rem, .3914);
+      letter-spacing: .16em;
+      color: $midium-grey;
+      padding-bottom: 2.5%;
+      margin-bottom: 7.5%;
+      border-bottom: 1px solid $midium-grey;
+    }
+    form {
+      @include font-size(1.6rem, 1.4rem, .3914);
+      dl {
+        > div {
+          display: flex;
+          align-items: center;
+          padding-bottom: 5%;
+          dt {
+            text-align: right;
+            width: 32.5%;
+            padding-right: 7.5%;
+          }
+          dd {
+            width: 67.5%;
+            input[type="text"],[type="tel"],[type="email"] {
+              width: 100%;
+              height: 2.5em;
+              border: 1px solid $midium-grey;
+              background-color: $black;
+            }
+          }
+        }
+        .form-date {
+          dd {
+            display: flex;
+            > div {
+              display: flex;
+              align-items: center;
+              width: 50%;
+              select {
+                flex: 1;
+                height: 2.5em;
+                margin-left: .5em;
+                border: 1px solid $midium-grey;
+                border-radius: 0;
+                background-color: $black;
+              }
+            }
+            .form-date01 {
+              padding-right: 3.7%;
+            }
+            .form-date02 {
+              padding-left: 3.7%;
+            }
+          }
+        }
+        .form-catering {
+          dd {
+            display: flex;
+            > div {
+              white-space: nowrap;
+              input[type="radio"] {
+                margin-right: .5em;
+              }
+            }
+            .form-catering01 {
+              padding-right: 3.7%;
+            }
+            .form-catering02 {
+              padding-left: 3.7%;
+            }
+          }
+        }
+        .form-comment {
+          align-items: flex-start;
+          dd {
+            textarea {
+              width: 100%;
+              border: 1px solid $midium-grey;
+              background-color: $black;
+            }
+          }
+        }
+        .form-confirm {
+          dd {
+            display: flex;
+            align-items: center;
+            .form-consent {
+              input[type="checkbox"] {
+                margin-right: .5em;
+              }
+            }
+            .submit-button {
+              margin: 0 auto;
+              input[type="submit"] {
+                @include century-gothic(400, 1.2rem, 1rem, .3914);
+                letter-spacing: .6em;
+                color: $black;
+                padding: 1.5em 3em;
+                background-color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   /* ↑↑↑↑↑ セクション(contact) 終了 ↑↑↑↑↑ */
 
 }
 /* ↑↑↑↑↑ メイン 終了 ↑↑↑↑↑ */
 
 /* ↓↓↓↓↓ フッター 開始 ↓↓↓↓↓ */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.33%;
+  background-color: $black;
+  dl {
+    dt {
+      @include century-gothic(400, 1.2rem, 1rem, .3914);
+    }
+    dd {
+      margin-bottom: 1.5em;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+      &:last-of-type {
+        @include century-gothic(400, 1.2rem, 1rem, .3914);
+      }
+    }
+  }
+}
 /* ↑↑↑↑↑ フッター 終了 ↑↑↑↑↑ */
 
 /* ↑↑↑↑↑ コンテンツ 終了 ↑↑↑↑↑ */

@@ -316,42 +316,73 @@
           <h3>予約フォーム</h3>
           <form action="mail.php" method="post">
             <dl>
-              <dt><label for="name">名前</label></dt>
-              <dd><input type="text" id="name" name="名前"></dd>
-              <dt><label for="address">住所</label></dt>
-              <dd><input type="text" id="address" name="住所"></dd>
-              <dt><label for="tel">電話番号</label></dt>
-              <dd><input type="tel" id="tel" name="電話番号"></dd>
-              <dt><label for="mail">メールアドレス</label></dt>
-              <dd><input type="email" id="mail" name="メールアドレス"></dd>
-              <dt>宿泊日</dt>
-              <dd>
-                <label for="date01">第1希望</label>
-                <select id="date01" name="宿泊日">
-                  <option value="" selected></option>
-                  <option value="12月18日(火)">12月18日(火)</option>
-                  <option value="12月19日(水)">12月19日(水)</option>
-                  <option value="12月20日(木)">12月20日(木)</option>
-                  <option value="12月21日(金)">12月21日(金)</option>
-                </select>
-                <label for="date02">第2希望</label>
-                <select id="date02" name="宿泊日">
-                  <option value="" selected></option>
-                  <option value="12月18日(火)">12月18日(火)</option>
-                  <option value="12月19日(水)">12月19日(水)</option>
-                  <option value="12月20日(木)">12月20日(木)</option>
-                  <option value="12月21日(金)">12月21日(金)</option>
-                </select>
-              </dd>
-              <dt>ケータリング</dt>
-              <dd>
-                <input type="radio" id="catering01" name="ケータリング" value="あり"><label for="catering01">あり(朝夕2食)</label>
-                <input type="radio" id="catering02" name="ケータリング" value="なし"><label for="catering02">なし(素泊り)</label>
-              </dd>
-              <dt><label for="comment">コメント</label></dt>
-              <dd><textarea id="comment" name="コメント" rows="4"></textarea></dd>
-              <dt></dt>
-              <dd><input type="checkbox" id="consent" name="同意" value="あり"><label for="consent">注意事項を確認の上、同意します。</label><input type="submit" value="SEND"></dd>
+              <div class="form-name">
+                <dt><label for="name">名前</label></dt>
+                <dd><input type="text" id="name" name="名前"></dd>
+              </div>
+              <div class="form-address">
+                <dt><label for="address">住所</label></dt>
+                <dd><input type="text" id="address" name="住所"></dd>
+              </div>
+              <div class="form-tel">
+                <dt><label for="tel">電話番号</label></dt>
+                <dd><input type="tel" id="tel" name="電話番号"></dd>
+              </div>
+              <div class="form-mail">
+                <dt><label for="mail">メールアドレス</label></dt>
+                <dd><input type="email" id="mail" name="メールアドレス"></dd>
+              </div>
+              <div class="form-date">
+                <dt>宿泊日</dt>
+                <dd>
+                  <div class="form-date01">
+                    <label for="date01">第1希望</label>
+                    <select id="date01" name="宿泊日">
+                      <option value="" selected></option>
+                      <option value="12月18日(火)">12月18日(火)</option>
+                      <option value="12月19日(水)">12月19日(水)</option>
+                      <option value="12月20日(木)">12月20日(木)</option>
+                      <option value="12月21日(金)">12月21日(金)</option>
+                    </select>
+                  </div>
+                  <div class="form-date02">
+                    <label for="date02">第2希望</label>
+                    <select id="date02" name="宿泊日">
+                      <option value="" selected></option>
+                      <option value="12月18日(火)">12月18日(火)</option>
+                      <option value="12月19日(水)">12月19日(水)</option>
+                      <option value="12月20日(木)">12月20日(木)</option>
+                      <option value="12月21日(金)">12月21日(金)</option>
+                    </select>
+                  </div>
+                </dd>
+              </div>
+              <div class="form-catering">
+                <dt>ケータリング</dt>
+                <dd>
+                  <div class="form-catering01">
+                    <input type="radio" id="catering01" name="ケータリング" value="あり"><label for="catering01">あり(朝夕2食)</label>
+                  </div>
+                  <div class="form-catering02">
+                    <input type="radio" id="catering02" name="ケータリング" value="なし"><label for="catering02">なし(素泊り)</label>
+                  </div>
+                </dd>
+              </div>
+              <div class="form-comment">
+                <dt><label for="comment">コメント</label></dt>
+                <dd><textarea id="comment" name="コメント" rows="4"></textarea></dd>
+              </div>
+              <div class="form-confirm">
+                <dt></dt>
+                <dd>
+                  <div class="form-consent">
+                    <input type="checkbox" id="consent" name="同意" value="あり"><label for="consent">注意事項を確認の上、同意します。</label>
+                  </div>
+                  <div class="submit-button">
+                    <input type="submit" value="SEND">
+                  </div>
+                </dd>
+              </div>
             </dl>
           </form>
         </section>
@@ -366,7 +397,7 @@
           <dd>barunnomori@gmail.com</dd>
         </dl>
         <div>
-          <p>バルンバルンの森</p>
+          <p><a href="#"><img src="images/logo.svg" alt="バルンバルンの森"></a></p>
           <p>©️ 2019 barunbarunnomori.</p>
         </div>
       </footer>

@@ -1291,6 +1291,7 @@
   }
   main .about-reservation table {
     border-collapse: collapse;
+    line-height: 2;
     margin: 0 auto;
   }
 }
@@ -1331,6 +1332,7 @@
   }
   main .about-reservation table tr td .footnote {
     position: relative;
+    line-height: 1.5;
     letter-spacing: .12em;
     padding-left: 1em;
   }
@@ -1474,8 +1476,208 @@
     left: 0;
     content: '※';
   }
+  main .contact {
+    margin: 0 16.66% 13.33% 16.66%;
+  }
+  main .contact h3 {
+    text-align: right;
+    letter-spacing: .16em;
+    color: #777;
+    padding-bottom: 2.5%;
+    margin-bottom: 7.5%;
+    border-bottom: 1px solid #777;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .contact h3 {
+    font-size: 1.8rem;
+    /* フォールバック */
+    font-size: calc(1.6rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .contact h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .contact form {
+    font-size: 1.6rem;
+    /* フォールバック */
+    font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .contact form {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main .contact form dl > div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5%;
+  }
+  main .contact form dl > div dt {
+    text-align: right;
+    width: 32.5%;
+    padding-right: 7.5%;
+  }
+  main .contact form dl > div dd {
+    width: 67.5%;
+  }
+  main .contact form dl > div dd input[type="text"], main .contact form dl > div dd [type="tel"], main .contact form dl > div dd [type="email"] {
+    width: 100%;
+    height: 2.5em;
+    border: 1px solid #777;
+    background-color: #000;
+  }
+  main .contact form dl .form-date dd {
+    display: flex;
+  }
+  main .contact form dl .form-date dd > div {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+  main .contact form dl .form-date dd > div select {
+    flex: 1;
+    height: 2.5em;
+    margin-left: .5em;
+    border: 1px solid #777;
+    border-radius: 0;
+    background-color: #000;
+  }
+  main .contact form dl .form-date dd .form-date01 {
+    padding-right: 3.7%;
+  }
+  main .contact form dl .form-date dd .form-date02 {
+    padding-left: 3.7%;
+  }
+  main .contact form dl .form-catering dd {
+    display: flex;
+  }
+  main .contact form dl .form-catering dd > div {
+    white-space: nowrap;
+  }
+  main .contact form dl .form-catering dd > div input[type="radio"] {
+    margin-right: .5em;
+  }
+  main .contact form dl .form-catering dd .form-catering01 {
+    padding-right: 3.7%;
+  }
+  main .contact form dl .form-catering dd .form-catering02 {
+    padding-left: 3.7%;
+  }
+  main .contact form dl .form-comment {
+    align-items: flex-start;
+  }
+  main .contact form dl .form-comment dd textarea {
+    width: 100%;
+    border: 1px solid #777;
+    background-color: #000;
+  }
+  main .contact form dl .form-confirm dd {
+    display: flex;
+    align-items: center;
+  }
+  main .contact form dl .form-confirm dd .form-consent input[type="checkbox"] {
+    margin-right: .5em;
+  }
+  main .contact form dl .form-confirm dd .submit-button {
+    margin: 0 auto;
+  }
+  main .contact form dl .form-confirm dd .submit-button input[type="submit"] {
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    letter-spacing: .6em;
+    color: #000;
+    padding: 1.5em 3em;
+    background-color: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  main .contact form dl .form-confirm dd .submit-button input[type="submit"] {
+    font-size: 1.2rem;
+    /* フォールバック */
+    font-size: calc(1rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  main .contact form dl .form-confirm dd .submit-button input[type="submit"] {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
   /* ↑↑↑↑↑ メイン 終了 ↑↑↑↑↑ */
   /* ↓↓↓↓↓ フッター 開始 ↓↓↓↓↓ */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 3.33%;
+    background-color: #000;
+  }
+  footer dl dt {
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  footer dl dt {
+    font-size: 1.2rem;
+    /* フォールバック */
+    font-size: calc(1rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  footer dl dt {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  footer dl dd {
+    margin-bottom: 1.5em;
+  }
+  footer dl dd:last-of-type {
+    margin-bottom: 0;
+  }
+  footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  footer > div p:last-of-type {
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  footer > div p:last-of-type {
+    font-size: 1.2rem;
+    /* フォールバック */
+    font-size: calc(1rem + ((1vw - 0.768rem) * 0.3914));
+  }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  footer > div p:last-of-type {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
   /* ↑↑↑↑↑ フッター 終了 ↑↑↑↑↑ */
   /* ↑↑↑↑↑ コンテンツ 終了 ↑↑↑↑↑ */
 }
