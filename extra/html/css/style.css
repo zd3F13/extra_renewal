@@ -1318,7 +1318,7 @@
     white-space: nowrap;
   }
   main .about-reservation table tr td {
-    padding: 0 0 2.5% 5%;
+    padding: 0 0 1.5em 3em;
   }
   main .about-reservation table tr td ul li {
     list-style-type: none;
@@ -1562,17 +1562,41 @@
   main .contact form dl .form-catering dd {
     display: flex;
   }
-  main .contact form dl .form-catering dd > div {
+  main .contact form dl .form-catering dd > div input[type="radio"] {
+    display: none;
+  }
+  main .contact form dl .form-catering dd > div label {
+    position: relative;
+    display: flex;
+    align-items: center;
     white-space: nowrap;
   }
-  main .contact form dl .form-catering dd > div input[type="radio"] {
+  main .contact form dl .form-catering dd > div label::before {
+    content: '';
+    display: block;
+    min-width: 1.5em;
+    min-height: 1.5em;
     margin-right: .5em;
+    border: 1px solid #777;
+    border-radius: 50%;
+    background-color: #000;
+  }
+  main .contact form dl .form-catering dd > div input[type="radio"]:checked + label::after {
+    position: absolute;
+    top: .3em;
+    left: .3em;
+    content: '';
+    display: block;
+    width: .9em;
+    height: .9em;
+    border-radius: 50%;
+    background-color: #fff;
   }
   main .contact form dl .form-catering dd .form-catering01 {
-    padding-right: 3.7%;
+    padding-right: 1.25em;
   }
   main .contact form dl .form-catering dd .form-catering02 {
-    padding-left: 3.7%;
+    padding-left: 1.25em;
   }
   main .contact form dl .form-comment {
     align-items: flex-start;
@@ -1587,7 +1611,33 @@
     align-items: center;
   }
   main .contact form dl .form-confirm dd .form-consent input[type="checkbox"] {
+    display: none;
+  }
+  main .contact form dl .form-confirm dd .form-consent label {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  main .contact form dl .form-confirm dd .form-consent label::before {
+    content: '';
+    display: block;
+    min-width: 1.5em;
+    min-height: 1.5em;
     margin-right: .5em;
+    border: 1px solid #777;
+    background-color: #000;
+  }
+  main .contact form dl .form-confirm dd .form-consent input[type="checkbox"]:checked + label::after {
+    position: absolute;
+    top: 25%;
+    left: .3em;
+    transform: rotate(-45deg);
+    content: '';
+    display: block;
+    width: 1.25em;
+    height: .75em;
+    border-bottom: 3px solid #fff;
+    border-left: 3px solid #fff;
   }
   main .contact form dl .form-confirm dd .submit-button {
     margin: 0 auto;
